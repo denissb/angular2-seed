@@ -11,8 +11,18 @@
     <app>
       Loading...
     </app>
-
-    <script async src="/main.bundle.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/0.19.41/system.js"></script>
+    <script>
+    // We need to use global format to import anonimous modules
+    SystemJS.config({ 
+      meta: { '*': { format: 'global' } }
+    });
+    SystemJS.import('/vendors.js').then(function() {
+      SystemJS.import('/main.js').then(function(bundle) {
+        console.log('loaded', bundle);
+      });
+    });
+    </script>
 
   </body>
 </html>

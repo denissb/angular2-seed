@@ -6,10 +6,11 @@ var webpackMerge = require('webpack-merge');
 var webpackConfig = {
   entry: {
     'main': './src/main.browser.ts',
+    'vendors': './src/polyfills.browser.ts'
   },
 
   output: {
-    publicPath: '',
+    filename: '[name].js',
     path: path.resolve(__dirname, './dist'),
   },
 

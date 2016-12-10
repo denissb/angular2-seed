@@ -56,13 +56,9 @@
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/@angular/upgrade/-/upgrade-2.2.1.tgz#5d645044c9de8a58be9075bde943d5b3b0f78d48"
 
-"@types/core-js@^0.9.32":
-  version "0.9.34"
-  resolved "https://registry.yarnpkg.com/@types/core-js/-/core-js-0.9.34.tgz#72c521d8e59fdaa8b65f76db71fa53c82c7c21c5"
-
-"@types/node@^6.0.38":
-  version "6.0.48"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-6.0.48.tgz#86ccc15f66b73cbbc5eb3483398936c585122b3c"
+"@types/node@^6.0.48":
+  version "6.0.51"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-6.0.51.tgz#84cbf25111516ec9304d0b61469dc0fa9d12ba32"
 
 abbrev@1:
   version "1.0.9"
@@ -109,6 +105,12 @@ amdefine@>=0.0.4:
 angular2-in-memory-web-api@0.0.21:
   version "0.0.21"
   resolved "https://registry.yarnpkg.com/angular2-in-memory-web-api/-/angular2-in-memory-web-api-0.0.21.tgz#20b4ada639343862da3274d41f7a0c66996bf619"
+
+angular2-router-loader@^0.3.4:
+  version "0.3.4"
+  resolved "https://registry.yarnpkg.com/angular2-router-loader/-/angular2-router-loader-0.3.4.tgz#bb458f233d30d66d58ae2648ad52b8ea1f433dec"
+  dependencies:
+    loader-utils "^0.2.15"
 
 angular2-template-loader@^0.6.0:
   version "0.6.0"
@@ -3192,7 +3194,7 @@ yargs@~3.10.0:
     decamelize "^1.0.0"
     window-size "0.1.0"
 
-zone.js@~0.6.23:
+zone.js@~0.6.26:
   version "0.6.26"
   resolved "https://registry.yarnpkg.com/zone.js/-/zone.js-0.6.26.tgz#067c13b8b80223a89b62e9dc82680f09762c4636"
 
