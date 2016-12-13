@@ -12,7 +12,7 @@ export const rootRouterConfig: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'about', component: AboutComponent },
   { path: 'github',
-    loadChildren: './github/github.module#GithubModule'
+    loadChildren: './github/github.module#GithubModule?chunkName=Github'
   },
   { path: 'contact', component: ContactComponent }
 ];

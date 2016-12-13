@@ -12,6 +12,7 @@ var webpackConfig = {
   output: {
     filename: '[name].js',
     path: path.resolve(__dirname, './dist'),
+    chunkFilename: '[name].js'
   },
 
   plugins: [
@@ -22,7 +23,7 @@ var webpackConfig = {
       {
         // your Angular Async Route paths relative to this root directory
       }
-    ),
+    )
   ],
 
   module: {
