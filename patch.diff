@@ -1,0 +1,112 @@
+From 65af04f025fb707b06759a10e5a63aa022690f61 Mon Sep 17 00:00:00 2001
+From: Deniss Borisovs <deniss.borisovs@gmail.com>
+Date: Tue, 20 Dec 2016 22:34:19 +0100
+Subject: [PATCH] added web pack config and index.html to repo
+
+---
+ src/index.html    | 65 ++++++++++++++++++++++++++++++++++++++++++++++++++++---
+ webpack.config.js |  8 ++++++-
+ 2 files changed, 69 insertions(+), 4 deletions(-)
+
+diff --git a/src/index.html b/src/index.html
+index 14ea4b8..1f9bd13 100644
+--- a/src/index.html
++++ b/src/index.html
+@@ -12,11 +12,70 @@
+       Loading...
+     </app>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/0.19.41/system.js"></script>
++<!--     <script src="https://npmcdn.com/core-js/client/shim.min.js"></script>
++    <script src="https://npmcdn.com/zone.js@0.6.12/dist/zone.min.js"></script>
++    <script src="https://cdnjs.cloudflare.com/ajax/libs/reflect-metadata/0.1.3/Reflect.min.js"></script> -->
++    <!-- <script src="https://npmcdn.com/rxjs@5.0.0-rc.4/bundles/Rx.min.js"></script> -->
++    <!-- Angular -->
++<!--     <script src="https://unpkg.com/@angular/core@2.3.0/bundles/core.umd.min.js"></script>
++    <script src="https://unpkg.com/@angular/common@2.3.0/bundles/common.umd.min.js"></script>
++    <script src="https://unpkg.com/@angular/compiler@2.3.0/bundles/compiler.umd.min.js"></script>
++    <script src="https://unpkg.com/@angular/http@2.3.0/bundles/http.umd.min.js"></script>
++    <script src="https://unpkg.com/@angular/platform-browser@2.3.0/bundles/platform-browser.umd.min.js"></script>
++    <script src="https://unpkg.com/@angular/platform-browser-dynamic@2.3.0/bundles/platform-browser-dynamic.umd.min.js"></script>
++    <script src="https://unpkg.com/@angular/router@3.3.0/bundles/router.umd.min.js"></script> -->
++
++    <!-- <script src="/vendors.js"></script> -->
++    <!-- <script src="/main.js"></script> -->
++
+     <script>
+-    // We need to use global format to import anonimous modules
+-    SystemJS.config({ 
+-      meta: { '*': { format: 'global' } }
++
++    // var map = {};
++
++    // var paths = {
++    //   'rxjs/*' : 'https://npmcdn.com/rxjs@5.0.0-rc.1/bundles/Rx.min.js', 
++    // };
++
++    // var packages = {
++    //   'rxjs': { defaultExtension: 'js' }
++    // };
++
++    // var ngPackageNames = [
++    //   'common',
++    //   'compiler',
++    //   'core',
++    //   'http',
++    //   'platform-browser',
++    //   'platform-browser-dynamic',
++    //   'router',
++    //   'router-deprecated',
++    //   'upgrade',
++    // ];
++
++    // ngPackageNames.forEach(function(pkgName) {
++    //   packages['@angular/'+ pkgName] = { defaultExtension: 'js' };
++
++    //   if (pkgName === 'router') {
++    //     map['@angular/'+ pkgName] = 'https://unpkg.com/@angular/' + pkgName + '@3.3.0/bundles/' + pkgName + '.umd.min.js';
++    //   } else {
++    //     map['@angular/'+ pkgName] = 'https://unpkg.com/@angular/' + pkgName + '@2.3.0/bundles/' + pkgName + '.umd.min.js';
++    //   }
++    // });
++
++    // var config = {
++    //   map: map,
++    //   packages: packages,
++    //   paths: paths,
++    //   meta: { '/vendors.js' : { format: 'global' }, '/main.js' : { format: 'global'} }
++    // };
++
++
++    // System.config(config);
++
++    System.config({
++      meta: { '/vendors.js' : { format: 'global' }, '/main.js' : { format: 'global'} }
+     });
++
+     SystemJS.import('/vendors.js').then(function() {
+       SystemJS.import('/main.js').then(function(bundle) {
+         console.log('loaded', bundle);
+diff --git a/webpack.config.js b/webpack.config.js
+index d32dedb..4a2ea11 100644
+--- a/webpack.config.js
++++ b/webpack.config.js
+@@ -12,9 +12,15 @@ var webpackConfig = {
+   output: {
+     filename: '[name].js',
+     path: path.resolve(__dirname, './dist'),
+-    chunkFilename: '[name].js'
++    chunkFilename: '[name].js',
++    // libraryTarget: 'commonjs'
+   },
+ 
++  externals: [
++    /^@angular\//,
++    /^rxjs\//
++  ],
++
+   plugins: [
+     new webpack.ContextReplacementPlugin(
+       // The (\\|\/) piece accounts for path separators in *nix and Windows
+-- 
+2.8.1
+

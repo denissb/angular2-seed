@@ -15,6 +15,11 @@ var webpackConfig = {
     chunkFilename: '[name].js'
   },
 
+  // externals: [
+  //   /^@angular\//,
+  //   /^rxjs\//
+  // ],
+
   plugins: [
     new webpack.ContextReplacementPlugin(
       // The (\\|\/) piece accounts for path separators in *nix and Windows

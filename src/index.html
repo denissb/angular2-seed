@@ -15,7 +15,9 @@
     <script>
     // We need to use global format to import anonimous modules
     SystemJS.config({ 
-      meta: { '*': { format: 'global' } }
+      meta: { '/vendors.js': { format: 'global' }, '/main.js': {
+        format: 'global'
+      } }
     });
     SystemJS.import('/vendors.js').then(function() {
       SystemJS.import('/main.js').then(function(bundle) {
