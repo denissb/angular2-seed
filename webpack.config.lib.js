@@ -16,7 +16,7 @@ var webpackConfig = {
   },
   
   //require those dependencies but don't bundle them
-  externals: [/^\@angular\//, /^rxjs\//],
+  //externals: [/^\@angular\//, /^rxjs\//],
 
 
   plugins: [

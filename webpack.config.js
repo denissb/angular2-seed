@@ -42,17 +42,8 @@ var webpackConfig = {
           'angular2-router-loader'
         ]
       },
-      {
-        test: /\.html$/,
-        loader: 'html'
-      },
-      {
-        test: /\.css$/,
-        exclude: helpers.root('src', 'app'),
-        loader: ExtractTextPlugin.extract('style', 'css?sourceMap')
-      },
-      // { test: /\.css$/, loaders: ['to-string-loader', 'css-loader'] },
-      // { test: /\.html$/, loader: 'raw-loader' }
+      { test: /\.css$/, loaders: ['to-string-loader', 'css-loader'] },
+      { test: /\.html$/, loader: 'raw-loader' }
     ]
   }
 
