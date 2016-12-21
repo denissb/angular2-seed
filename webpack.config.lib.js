@@ -15,8 +15,8 @@ var webpackConfig = {
       libraryTarget: 'umd',
   },
   
-  // require those dependencies but don't bundle them
-  //externals: [/^\@angular\//, /^rxjs\//],
+  //require those dependencies but don't bundle them
+  externals: [/^\@angular\//, /^rxjs\//],
 
 
   plugins: [
