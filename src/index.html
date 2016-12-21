@@ -13,17 +13,48 @@
     </app>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/0.19.41/system.js"></script>
     <script>
-    // We need to use global format to import anonimous modules
+    //We need to use global format to import anonimous modules
     SystemJS.config({ 
-      meta: { '/vendors.js': { format: 'global' }, '/main.js': {
-        format: 'global'
-      } }
+      meta: { 
+            'vendors.js': { format: 'global' }, 
+            'main.js': {format: 'global'},
+            'contacts.umd.js': {format: 'cjs'}
+        }
     });
     SystemJS.import('/vendors.js').then(function() {
       SystemJS.import('/main.js').then(function(bundle) {
         console.log('loaded', bundle);
       });
     });
+
+    // SystemJS.config({ 
+    //   meta: { 
+    //     'https://unpkg.com/@angular/common@2.3.0/bundles/common.umd.js': {format: 'commonjs'},
+    //     './contacts.umd.js': {format: 'commonjs'},
+    //     './angular-library-starter.umd.js': {format: 'commonjs'}
+    //   }
+    // });
+
+    // SystemJS.import('https://unpkg.com/@angular/common@2.3.0/bundles/common.umd.js').then(function(module) {
+    //   console.log(module);
+    //   // SystemJS.import('/main.js').then(function(bundle) {
+    //   //   console.log('loaded', bundle);
+    //   // });
+    // });
+
+    // SystemJS.import('./contacts.umd.js').then(function(module) {
+    //   console.log(module);
+    //   // SystemJS.import('/main.js').then(function(bundle) {
+    //   //   console.log('loaded', bundle);
+    //   // });
+    // });
+
+    // SystemJS.import('./angular-library-starter.umd.js').then(function(module) {
+    //   console.log(module);
+    //   // SystemJS.import('/main.js').then(function(bundle) {
+    //   //   console.log('loaded', bundle);
+    //   // });
+    // });
     </script>
 
   </body>

@@ -10,7 +10,7 @@ import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { ContactComponent } from './contact/contact.component';
-import { ModuleLoaderComponent } from './loader/moduleLoader.component';
+import { ModuleLoaderDirective} from './loader/moduleLoader.directive';
 
 @NgModule({
   declarations: [
@@ -18,7 +18,7 @@ import { ModuleLoaderComponent } from './loader/moduleLoader.component';
     AboutComponent,
     HomeComponent,
     ContactComponent,
-    ModuleLoaderComponent
+    ModuleLoaderDirective
   ],
   imports: [
     BrowserModule,
